@@ -1,6 +1,11 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .list {
@@ -29,10 +34,12 @@
   margin-bottom: 1rem;
   margin-left: 4px;
   margin-right: 4px;
+  color: black;
 }
 
 .no-underline {
   text-decoration: none;
+  color: black;
 }
 
 .description-page {
@@ -45,8 +52,69 @@
 
 .description-head {
   height: 10%;
+  padding-left: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .description-body {
   height: 100%;
+  padding-left: 4rem;
+  padding-right: 4rem;
+
+  /* white-space: pre-line; */
+}
+
+/* styles.css */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.description-body ul {
+  margin-left: 30px;
+}
+
+.description-body ul ul {
+  margin-left: 30px; /* Adjust as needed */
+}
+.description-body ol {
+  margin-left: 30px;
+}
+
+.description-body ol ol {
+  margin-left: 30px; /* Adjust as needed */
+}
+
+blockquote {
+  margin-left: 30px;
+}
+
+img {
+  width: 500px;
+  height: 300px;
+}
+
+.active {
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+}
+.main-active {
+  width: 20vw;
+  background-color: blue;
+  padding: 10px;
+  border-radius: 8px;
+  /* color: white; */
 }

@@ -6,33 +6,36 @@ interface navList {
 }
 const Navbar: React.FC<navList> = ({ list }) => {
   const location = useLocation();
-  useEffect(() => {
-    console.log(location.pathname);
-  }, [location]);
+
   return (
     <ul className="list">
       <li className="nav-link">
-        <Link to="/">Menu</Link>
+        <Link
+          to="/menu"
+          style={{ fontWeight: "bold", color: "black", textDecoration: "none" }}
+        >
+          Menu
+        </Link>
       </li>
       ;
       {list.map((elem, index) => {
         return (
-          <li key={index} className="nav-link">
+          <li
+            key={index}
+            className={`nav-link ${
+              location.pathname.split("/")[1] === elem.title.split(" ").join("")
+                ? "main-active"
+                : ""
+            }`}
+          >
             <Link
               to={elem.title.split(" ").join("")}
-              style={{
-                fontWeight:
-                  location.pathname.split("/")[1] ===
-                  elem.title.split(" ").join("")
-                    ? "bold"
-                    : "normal",
-                fontStyle:
-                  location.pathname.split("/")[1] ===
-                  elem.title.split(" ").join("")
-                    ? "italic"
-                    : "normal",
-              }}
-              className="no-underline"
+              className={`no-underline ${
+                location.pathname.split("/")[1] ===
+                elem.title.split(" ").join("")
+                  ? "active"
+                  : ""
+              }`}
             >
               {elem.title}
             </Link>
