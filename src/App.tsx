@@ -27,7 +27,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <div style={{ display: "flex" }}>
-        <div>
+        <div className="navbar">
           <Navbar list={data} />
         </div>
         <div>

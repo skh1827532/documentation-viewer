@@ -8,6 +8,11 @@ body {
   overflow-x: hidden;
 }
 
+.navbar {
+  position: fixed;
+  width: 20vw;
+}
+
 .list {
   list-style: none;
   padding: 0;
@@ -48,6 +53,7 @@ body {
   justify-content: center;
   /* align-items: center; */
   width: 80vw;
+  margin-left: 20vw;
 }
 
 .description-head {
@@ -55,12 +61,16 @@ body {
   padding-left: 4rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  overflow-y: auto;
+  /* position: fixed; */
 }
 
 .description-body {
   height: 100%;
   padding-left: 4rem;
   padding-right: 4rem;
+  overflow-y: auto;
+  /* margin-top: 10%; */
 
   /* white-space: pre-line; */
 }
