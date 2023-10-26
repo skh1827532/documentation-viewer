@@ -12,6 +12,7 @@ body {
 .navbar {
   position: fixed;
   width: 20vw;
+  height: 100vh;
 }
 
 .list {
@@ -26,6 +27,7 @@ body {
   margin-top: 30px;
   margin-bottom: 30px;
   width: 20vw;
+  height: 100vh;
 }
 
 .menu-link {
