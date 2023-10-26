@@ -155,3 +155,21 @@ img {
 .navbar::-webkit-scrollbar-track {
   border-radius: 4px;
 }
+
+.input-tag {
+  margin: 1rem;
+  width: 50%;
+  height: 5vh;
+  border-radius: 4px;
+  padding-left: 4px;
+}
+
+.btn-primary {
+  width: 10%;
+  height: 5vh;
+  border-radius: 4px;
+  /* padding-left: 4px; */
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
