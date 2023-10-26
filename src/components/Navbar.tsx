@@ -8,16 +8,21 @@ const Navbar: React.FC<navList> = ({ list }) => {
   const location = useLocation();
 
   return (
-    <ul className="list">
+    <ul className="list nav-list">
       <li className="nav-link">
         <Link
-          to="/menu"
-          style={{ fontWeight: "bold", color: "black", textDecoration: "none" }}
+          to="/"
+          style={{
+            fontWeight: "bold",
+            color: "black",
+            textDecoration: "none",
+            fontSize: "2rem",
+          }}
         >
           Menu
         </Link>
       </li>
-      ;
+
       {list.map((elem, index) => {
         return (
           <li

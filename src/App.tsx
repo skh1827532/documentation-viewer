@@ -1,6 +1,11 @@
 // App.tsx
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import DescriptionComponent from "./components/Description";
 import { DataItem } from "./types";
 import Navbar from "./components/Navbar";
@@ -32,9 +37,22 @@ const App: React.FC = () => {
         </div>
         <div>
           <Routes>
-            {data.map((item) => (
+            <Route
+              path="/"
+              element={
+                <Navigate
+                  to={`/${firstData.title.split(" ").join("")}`}
+                  replace
+                />
+              }
+            />
+            {data.map((item, index) => (
               <Route
-                path={`/${item.title.split(" ").join("")}`}
+                path={
+                  index === 0
+                    ? `/${firstData.title.split(" ").join("")}`
+                    : `/${item.title.split(" ").join("")}`
+                }
                 element={
                   <DescriptionComponent
                     title={item.title}
