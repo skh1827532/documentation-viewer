@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
-const Input = ({ onClick, input, setInput, empty }) => {
+import { InputProps } from "../types";
+const Input: React.FC<InputProps> = ({ onClick, input, setInput, empty }) => {
   return (
     <div>
       <input

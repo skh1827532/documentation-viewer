@@ -10,3 +10,10 @@ export interface DescriptionComponentProps {
 export interface NavbarProps {
   title: string;
 }
+
+export interface InputProps {
+  onClick: () => void;
+  input: string;
+  setInput: (value: string) => void;
+  empty: boolean;
+}
