@@ -16,16 +16,18 @@ const Input = ({ onClick, input, setInput, empty }) => {
       <button onClick={() => onClick()} className="btn-primary">
         GO
       </button>
-      {empty && <div
-        style={{
-          margin: "1rem",
-          marginTop: "0",
-          color: "red",
-          fontWeight: "bold",
-        }}
-      >
-        Field should not be empty!
-      </div>}
+      {empty && (
+        <div
+          style={{
+            margin: "1rem",
+            marginTop: "0",
+            color: "red",
+            fontWeight: "bold",
+          }}
+        >
+          Field should not be empty!
+        </div>
+      )}
     </div>
   );
 };
