@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Input = ({ onClick, input, setInput }) => {
+const Input = ({ onClick, input, setInput, empty }) => {
   return (
     <div>
       <input
@@ -16,6 +16,16 @@ const Input = ({ onClick, input, setInput }) => {
       <button onClick={() => onClick()} className="btn-primary">
         GO
       </button>
+      {empty && <div
+        style={{
+          margin: "1rem",
+          marginTop: "0",
+          color: "red",
+          fontWeight: "bold",
+        }}
+      >
+        Field should not be empty!
+      </div>}
     </div>
   );
 };

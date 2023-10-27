@@ -19,11 +19,18 @@ const App: React.FC = () => {
     bodyText: "",
   });
 
+  const [empty, setEmpty] = useState<boolean>(false);
+
   const [clicked, setClicked] = useState<boolean>(false);
   const [input, setInput] = useState<string>("");
 
   const getData = async (url: string) => {
+    if (url === "") {
+      setEmpty(true);
+      return;
+    }
     setLoading(true);
+    setClicked(true);
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -40,7 +47,6 @@ const App: React.FC = () => {
   };
 
   const onClick = () => {
-    setClicked(true);
     getData(input);
   };
 
@@ -49,7 +55,12 @@ const App: React.FC = () => {
       {loading && <h1>Loading...</h1>}
 
       {!loading && !clicked && !dataState && (
-        <Input onClick={onClick} input={input} setInput={setInput} />
+        <Input
+          onClick={onClick}
+          input={input}
+          setInput={setInput}
+          empty={empty}
+        />
       )}
 
       {!loading && clicked && dataState && data.length === 0 && (
